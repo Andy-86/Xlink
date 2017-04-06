@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorMainGray"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+
+        android:id="@+id/item_help_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="帮助选项"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/item_help_img_down"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/item_help_down_white" />
+
+    <TextView
+        android:id="@+id/item_help_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="这里是app的使用教程
+这里是app的使用教程
+这里是app的使用教程
+这里是app的使用教程"
+        android:textColor="#fff" />
+
+</LinearLayout>

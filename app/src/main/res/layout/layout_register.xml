@@ -17,7 +17,7 @@
 
     </RelativeLayout>
 
-    <Demo.View.OverScrollView
+    <com.example.andy.connectutil.View.OverScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -115,6 +115,6 @@
 
 
         </LinearLayout>
-    </Demo.View.OverScrollView>
+    </com.example.andy.connectutil.View.OverScrollView>
 
 </LinearLayout>

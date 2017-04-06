@@ -7,8 +7,6 @@ import android.widget.ImageView;
 
 import com.example.andy.connectutil.R;
 
-import Demo.Activity.BasicActivity;
-
 
 /**
  * Created by 95815 .

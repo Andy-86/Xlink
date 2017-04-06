@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/colorMainGray"
+
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+<ImageButton
+  android:layout_marginLeft="20dp"
+    android:layout_gravity="center_vertical"
+    android:id="@+id/ibtn_toolbar_backup"
+    style="@style/ibtn_size_stytle"
+     android:background="@drawable/backup"
+
+    />
+
+    <TextView
+        android:id="@+id/tv_toolbar_others"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="#fff" />
+
+    <View android:layout_height="2px"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:background="@color/colorStrokeGray"
+        />
+
+</FrameLayout>

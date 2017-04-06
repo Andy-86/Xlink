@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     />
 
-    <Demo.View.ControlView
+    <com.example.andy.connectutil.View.ControlView
         android:id="@+id/controlView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

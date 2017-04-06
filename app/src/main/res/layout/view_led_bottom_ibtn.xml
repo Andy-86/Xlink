@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/ibtn_led_power"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_ibtn_led"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/selector_ibtn_led" />
+    <TextView
+
+        android:id="@+id/tv_led_countdown"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:text="长按延时"
+        android:textColor="@color/colorOrange"
+        android:textSize="15sp" />
+    <View
+        android:layout_toLeftOf="@id/tv_led_countdown"
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:background="@color/colorInnerGray"
+        />
+</RelativeLayout>

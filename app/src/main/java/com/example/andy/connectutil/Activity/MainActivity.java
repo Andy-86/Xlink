@@ -1,7 +1,6 @@
 package com.example.andy.connectutil.Activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.NavigationView;
@@ -9,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -21,23 +21,20 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
+import com.example.andy.connectutil.Adapter.AddEquitAdapter;
+import com.example.andy.connectutil.Bean.Equitment;
+import com.example.andy.connectutil.Fragment.CountDownFragment;
+import com.example.andy.connectutil.Fragment.EquitmentSelectFragment;
+import com.example.andy.connectutil.Fragment.FragmentHolder;
+import com.example.andy.connectutil.Fragment.HolderListener;
+import com.example.andy.connectutil.Fragment.WifiConnectionFragment;
 import com.example.andy.connectutil.R;
 import com.example.andy.connectutil.SharePrefrence.Account;
+import com.example.andy.connectutil.View.SpaceItemDecoration;
 import com.example.andy.connectutil.entity.WifiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Demo.Activity.BasicActivity;
-import Demo.Adapter.AddEquitAdapter;
-import Demo.Bean.Equitment;
-import Demo.Fragment.CountDownFragment;
-import Demo.Fragment.EquitmentSelectFragment;
-import Demo.Fragment.FragmentHolder;
-import Demo.Fragment.HolderListener;
-import Demo.Fragment.WifiConnectionFragment;
-import Demo.View.SpaceItemDecoration;
 
 /**
  * Created by 95815 .
@@ -95,6 +92,7 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
         mAdapter = new AddEquitAdapter(this, equitmentList);
         int spacingInPixels = 8;
         recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(mAdapter);
         Log.d("waiwen","setAdapter：");
 
@@ -184,10 +182,10 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
                 break;
             case R.id.img_backup:
                 if(holder.getState() == FragmentHolder.WIFI_CONNECTION_FRAGMENT){
-                             holder.removeFragment(WifiConnectionFragment.fragment_tag);
+                             holder.removeFragmentByTag(WifiConnectionFragment.fragment_tag);
                 }
                 else if(holder.getState() == FragmentHolder.SELECT_FRAGMENT){
-                    holder.removeFragment(EquitmentSelectFragment.fragment_tag);
+                    holder.removeFragmentByTag(EquitmentSelectFragment.fragment_tag);
                 }
                 break;
 
@@ -198,11 +196,22 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_addequitment) {
+            add_Aquitment();
+            setDrawerOnOff();
         } else if (id == R.id.nav_share) {
+            startActivity(new Intent(this, ShareActivity.class));
+            setDrawerOnOff();
         } else if (id == R.id.nav_about) {
+            startActivity(new Intent(this, AboutActivity.class));
+            setDrawerOnOff();
         } else if (id == R.id.nav_help) {
+            startActivity(new Intent(this, HelpActivity.class));
+            setDrawerOnOff();
         } else if (id == R.id.nav_language) {
-        } else if (id == R.id.nav_backup) {
+            startActivity(new Intent(this,LanguageActivity.class));
+            setDrawerOnOff();
+        }
+        else if (id == R.id.nav_backup) {
             account.setAccount(account.getUser(),"");
             finish();
             Intent intent=new Intent(MainActivity.this,RegisterAndLoginActivity.class);
@@ -210,6 +219,20 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
         }
         return true;
     }
+
+    public void add_Aquitment() {
+        if (holder.getState() == FragmentHolder.MAIN_PAGE) {
+            holder.addFragment(EquitmentSelectFragment.newInstance(), EquitmentSelectFragment.fragment_tag);
+            holder.setState(FragmentHolder.SELECT_FRAGMENT);
+        }
+        if (holder.getState() != FragmentHolder.SELECT_FRAGMENT) {
+            holder.replaceFragment(EquitmentSelectFragment.newInstance(), EquitmentSelectFragment.fragment_tag);
+            holder.setState(FragmentHolder.SELECT_FRAGMENT);
+        }
+
+
+    }
+
 
     protected void setDrawerOnOff() {
         if (!drawer.isDrawerOpen(GravityCompat.START)) {

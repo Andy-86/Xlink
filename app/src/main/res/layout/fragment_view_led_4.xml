@@ -3,7 +3,11 @@
     android:orientation="vertical" 
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_weight="7"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
     <LinearLayout
         android:layout_weight="1"
         android:orientation="horizontal"
@@ -11,11 +15,17 @@
         android:layout_height="0dp">
 
         <Button
-            android:text="1"
-            android:layout_weight="1"
+
+            style="@style/led_btn_stytle"
+            android:id="@+id/led_4_one"
             android:layout_width="0dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1" />
+
         <Button
+            android:id="@+id/led_4_btn_two"
+            style="@style/led_btn_stytle"
             android:text="2"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -24,30 +34,43 @@
     </LinearLayout>
 
     <LinearLayout
+
         android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <Button
+            android:id="@+id/led_4_btn_three"
+            style="@style/led_btn_stytle"
             android:text="3"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <Button
+            android:id="@+id/led_4_btn_four"
+            style="@style/led_btn_stytle"
             android:text="4"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
 
-
-
     </LinearLayout>
-    
-    <Button
-        android:text="开关"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="10dp"
+
+
+</LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <include
+            layout="@layout/view_led_bottom_ibtn"/>
+    </RelativeLayout>
 
 </LinearLayout>

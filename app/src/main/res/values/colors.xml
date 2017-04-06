@@ -42,4 +42,11 @@
     <color name="tab_text_normal">#666</color>
     <color name="tab_text_selected">#fff</color>
     <color name="status_bar">#27C4A2</color>
+
+    <color name ="colorIbtnGreen">#5ACE77</color>
+
+    <color name="colorOrange">#FF680D</color>
+
+
+
 </resources>

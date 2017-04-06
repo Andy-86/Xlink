@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:id="@+id/new_guide"
-
+    android:id="@+id/view_new_guide"
     android:background="@drawable/shape_select_btn"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
         <TextView
+
+            android:id="@+id/tv_first_guide"
+            android:textSize="18sp"
             android:textColor="#fff"
             android:background="@drawable/shape_fragmentlayout"
             android:layout_marginTop="50dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:text="测试引导页,此处是新手教程,    点击即消失!!!!!!!!!!!!!!"
-            android:layout_width="200dp"
+            android:gravity="center_vertical"
+            android:text="wifi配对界面时输入WiFi密码然后用遥控激活配网：按一下遥控开关键再按一下灯开关键，正确配对后
+出现‘滴’的一声。"
+            android:layout_width="300dp"
             android:layout_height="200dp" />
 
 </LinearLayout>

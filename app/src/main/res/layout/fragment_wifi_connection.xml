@@ -11,10 +11,7 @@
         android:layout_margin="16dp"
         android:gravity="center"
         android:orientation="vertical"
-
         >
-
-
         <RelativeLayout
 
             android:layout_width="match_parent"
@@ -22,7 +19,7 @@
 
             <ImageView
                 android:id="@+id/img_wifi"
-                android:layout_width="100dp"
+                android:layout_width="140dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
@@ -52,19 +49,33 @@
 
             <ImageView
                 android:id="@+id/img_lock"
-                android:layout_width="30dp"
+                android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/lock_gray" />
 
 
             <EditText
                 android:id="@+id/et_wifi_password"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp" />
+                android:layout_marginLeft="2dp"
+                android:layout_weight="10" />
+
+            <ImageButton
+               android:background="@color/colorItemGray"
+                android:scaleType="fitCenter"
+                android:src="@drawable/password_eye_white"
+                android:id="@+id/ibtn_password_see"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1" />
 
 
         </LinearLayout>
